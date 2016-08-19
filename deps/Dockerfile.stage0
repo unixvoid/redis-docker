@@ -1,0 +1,5 @@
+FROM alpine
+
+RUN apk add --update redis
+
+CMD ["cp", "/usr/bin/redis-server", "/lib/ld-musl-x86_64.so.1", "/stage/"]
