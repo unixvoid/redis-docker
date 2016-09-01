@@ -1,8 +1,10 @@
 # unixvoid/redis
-This project is intended to be a small redis image for production use.
-For now this image adds in a filesystem that was built statically.  In
-near future I plan to create a build project that will build this statically,
-but for now it remains as a binary.
+This project is intended to be a small redis image for production use.  
+To build the image, we actually take the binary and a single shared object from alpine linux.
 
-- to build this image, issue the following
+- to build this image without building (pulls root filesystem from binder), issue the following
+  - `make bootstrap`
+  - `make docker`
+- to build this image, building the filesystem from scratch, issue the following
+  - `make binary rootfs`
   - `make docker`
